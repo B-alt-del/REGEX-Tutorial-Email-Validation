@@ -53,24 +53,26 @@ The `(  )` captures a match and then remembers it. The groups are stored in an a
 
 ### Bracket Expressions
 
-/^(`[a-z0-9_\.-]`+)`@`(`[\da-z\.-]`+)\.(`[a-z\.]`{2,6})$/
+/^(`[a-z0-9_\.-]`+)@(`[\da-z\.-]`+)\.(`[a-z\.]`{2,6})$/
 
 The brackets are used to group together character classes, when making the match in the algorithm it may use any of the characters included inside the brackets.
 
 ### Character Classes
 
+/^(`[a-z0-9_\.-]`+)`@`(`[\da-z\.-]`+)\.(`[a-z\.]`{2,6})$/
+
 `@` Match the @ sign, between the username and the service's domain name.
 
-[a-z0-9_\.-]+   
+`[a-z0-9_\.-]+ `  
 
 Means match any characters a-z, any digits 0-9, underscores, periods, and dashes 
 and the `+` means match one or more.
 
-[\da-z\.-]+
+`[\da-z\.-]+`
 
 `\d` is shorthand for `0-9`, so includes digits, letters, periods and dashes
 
-[a-z\.]
+`[a-z\.]`
 
 Match letters a-z and periods
 
@@ -85,7 +87,7 @@ There are 6 regex flags in javascript, they allow to assign special situations. 
 
 ### Character Escapes
 
-/^([a-z0-9_`\.`-]+)@([`\d`a-z`\`.-]+)`\.`([a-z`\.`]{2,6})$/
+/^([a-z0-9_`\.`-]+)@([`\d`a-z`\.`-]+)`\.`([a-z`\.`]{2,6})$/
 
 Character escapes are indicated with a `\` and let the algorithm know that the next character is going to be treated differently.
 
