@@ -53,17 +53,26 @@ The `(  )` captures a match and then remembers it. The groups are stored in an a
 
 ### Bracket Expressions
 
-/^(`[a-z0-9_\.-]`+)@(`[\da-z\.-]`+)\.(`[a-z\.]`{2,6})$/
+/^(`[a-z0-9_\.-]`+)`@`(`[\da-z\.-]`+)\.(`[a-z\.]`{2,6})$/
 
 The brackets are used to group together character classes, when making the match in the algorithm it may use any of the characters included inside the brackets.
 
 ### Character Classes
 
-[a-z0-9_\.-] 
+`@` Match the @ sign, between the username and the service's domain name.
 
-[\da-z\.-]
+[a-z0-9_\.-]+   
+
+Means match any characters a-z, any digits 0-9, underscores, periods, and dashes 
+and the `+` means match one or more.
+
+[\da-z\.-]+
+
+`\d` is shorthand for `0-9`, so includes digits, letters, periods and dashes
 
 [a-z\.]
+
+Match letters a-z and periods
 
 ### The OR Operator
 
@@ -72,11 +81,11 @@ For exanmple, /green`|`red/ would match either the word green or the word red
 
 ### Flags
 
-There are 6 regex flags in javascript, they allow to assign special situations. for example the i flag would indicate case insensitivity. There are not any flags in the email regex.
+There are 6 regex flags in javascript, they allow to assign special situations. for example the `i` flag would indicate case insensitivity. There are not any flags in the email regex.
 
 ### Character Escapes
 
-/^([a-z0-9_`\.`-]+)@([`\d`a-z`\`.-]+)\.([a-z`\.`]{2,6})$/
+/^([a-z0-9_`\.`-]+)@([`\d`a-z`\`.-]+)`\.`([a-z`\.`]{2,6})$/
 
 Character escapes are indicated with a `\` and let the algorithm know that the next character is going to be treated differently.
 
@@ -86,4 +95,6 @@ Character escapes are indicated with a `\` and let the algorithm know that the n
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+I am a student in the Full Stack coding bootcamp, learning how to code has been very interesting and very exciting, regular expressions seem like jibberish at first but once you start to break them down they are really quite simple. 
+
+Bradley Schill: https://github.com/B-alt-del/REGEX-Tutorial-Email-Validation
